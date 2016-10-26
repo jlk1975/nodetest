@@ -1,0 +1,23 @@
+{
+  apps : [
+    {
+      name      : "nodetest",
+      script    : "app.js",
+      env: {
+        COMMON_VARIABLE: "true"
+      },
+      env_production : {
+        NODE_ENV: "production"
+      }
+    }
+  ],
+  deploy : {
+    production : {
+      user : "nodeuser",
+      host : "192.168.1.105",
+      ref  : "origin/master",
+      repo : "git@github.com:jlk1975/nodetest.git",
+      path : "/var/www/production"
+    },
+  }
+}
