@@ -17,7 +17,8 @@
       host : "192.168.1.105",
       ref  : "origin/master",
       repo : "git@github.com:jlk1975/nodetest.git",
-      path : "/var/www/production"
+      path : "/var/www/production",
+      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json --env production"
     },
   }
 }
